@@ -6,10 +6,10 @@ I used the [DDPG code from project 2](https://github.com/da1ssk/Udacity-DRLND-2-
 
 The actor and critic models are common for both agents. Experience from each agent is added to the replay buffer for each step.
 
-I needed to perform random actions before acting based on the policy. Otherwise learning never happened and the max score is always 0.0. The random actions are performed for the first 1400 steps which is roughly equal to 100 episodes.
+I needed to perform random actions before acting based on the policy. Otherwise learning never happened and the max score is always 0.0. The random actions are performed for the first 1400 steps which are roughly equal to 100 episodes.
 
 ### Agent ([`ddpg_agent.py`](ddpg_agent.py))
-The changes I made were its hyperparameters, and the sigma of the OUNoise as suggested [here](https://knowledge.udacity.com/questions/210686). Interestingly, as soon as I changed sigma to 0.1, the learning got much better.
+The changes I made were its hyperparameters, and the sigma of the OUNoise as suggested [here](https://knowledge.udacity.com/questions/210686). Interestingly, as soon as I changed the sigma to 0.1, the learning got much better.
 
 **Hyperparameters**
 - `BUFFER_SIZE` = int(1e6)  # replay buffer size
@@ -67,8 +67,8 @@ I visualized the agent by loading the learned actor's weight (`checkpoint_actor.
 <img src="tennis_result.gif" width=480>
 
 ## Ideas for Future Work
-It is impressive to see the agents keep rallying for a significant time period.
+It is impressive to see the agents keep rallying for a significant period.
 
-The only thing I would like to improve is the speed of leraning. It started getting rewards only after 1000 episodes. While learning with GPU is quick, it would be good to make it less episodes to run.
+The only thing I would like to improve is the speed of learning. It started getting rewards only after 1000 episodes. While learning with GPU is quick, it would be good to make it fewer episodes to run.
 
 It would be also interesting to apply the same technique to the Soccor environment and see how it works.
