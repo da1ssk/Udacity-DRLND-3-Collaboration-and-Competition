@@ -59,7 +59,9 @@ Here is the plot of rewards over episodes.
 
 ![rewards](rewards.png)
 
-It took 1600 episodes to pass the criteria. However, the rewards decreased below 0.5.
+It took 1600 episodes to pass the criteria. However, the rewards decreased below 0.5 after that.
+
+The learned weights for the networks are found [here](checkpoint_actor.pth) (actor) and [here](checkpoint_critic.pth) (critic).
 
 ## Using the learned weight for visualization
 I visualized the agent by loading the learned actor's weight (`checkpoint_actor.pth`).
@@ -70,5 +72,7 @@ I visualized the agent by loading the learned actor's weight (`checkpoint_actor.
 It is impressive to see the agents keep rallying for a significant period.
 
 The only thing I would like to improve is the speed of learning. It started getting rewards only after 1000 episodes. While learning with GPU is quick, it would be good to make it fewer episodes to run.
+
+I noticed that the agents' behaviors move far forward after they hit the ball. It feels inefficient energy-wise even if that's the best strategy to pick the ball. We could probably penalize the excessive movement by introducing some error terms and further optimize the agent's movement.
 
 It would be also interesting to apply the same technique to the Soccor environment and see how it works.
