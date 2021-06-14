@@ -1,24 +1,28 @@
 # Udacity-DRLND-3-Collaboration-and-Competition
 
-**OUNoise's sigma=0.1 was the key!**
-
-In this project, we train a double-jointed arm to reach target locations.
+In this project, we train two agents control rackets to bounce a ball over a net.
 
 The simulation environment is based on Unity Environment. The code is available [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/python/unityagents)
 
-<img src=".gif" width=480>
+<img src="tennis_result.gif" width=480>
 
 ### Rewards
-
+If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
 
 ### States
-There are  states in this environment. Those consist of .
+There are 8 states per agent in this environment. We get 3 of them stacked as observation.
 
 ### Actions
-Each action is a vector with . Every entry in the action vector is clipped between -1 and 1.
+Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
+
+Every entry in the action vector is clipped between -1 and 1.
 
 ### Criteria
-If the average score of the latest 100 episodes exceeds +0.5, it is considered solved.
+The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
+
+- After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
+- This yields a single score for each episode.
+The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
 
 ## Getting started
 
@@ -29,13 +33,13 @@ Follow the instruction by Udacity [here](https://github.com/udacity/deep-reinfor
 1. Download the environment from one of the links below. For faster training, choose the "No visualization" environment.
 
     **No visualization:**
-    - Linux: [click here]()
+    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux_NoVis.zip)
 
     **With visualization:**
-    - Linux: [click here]()
-    - Mac OSX: [click here]()
-    - Windows (32-bit): [click here]()
-    - Windows (64-bit): [click here]()
+    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
+    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
+    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
+    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
 
 2. Move the downloaded file in the same folder as in this Readme, then unzip it.
 
