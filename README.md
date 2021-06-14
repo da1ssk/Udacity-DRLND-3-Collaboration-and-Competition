@@ -45,7 +45,7 @@ Follow the instruction by Udacity [here](https://github.com/udacity/deep-reinfor
 
 3. Load `Tennis.ipynb` in Jupyter notebook, then follow the instruction.
 
-For more information, please refer to the [Udacity's instruction](https://github.com/udacity/deep-reinforcement-learning/tree/master/p2_continuous-control).
+For more information, please refer to the [Udacity's instruction](https://github.com/udacity/deep-reinforcement-learning/tree/master/p3_collab-compet).
 
 ## Report
 The report can be found [here](Report.md)
