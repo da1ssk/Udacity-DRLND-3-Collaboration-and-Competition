@@ -1,8 +1,8 @@
 # Udacity-DRLND-3-Collaboration-and-Competition
 
-In this project, we train two agents control rackets to bounce a ball over a net.
+In this project, we train two agents to control rackets to bounce a ball over a net.
 
-The simulation environment is based on Unity Environment. The code is available [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/python/unityagents)
+The simulation environment is based on the Unity Environment. The code is available [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/python/unityagents)
 
 <img src="tennis_result.gif" width=480>
 
@@ -13,7 +13,7 @@ If an agent hits the ball over the net, it receives a reward of +0.1. If an agen
 There are 8 states per agent in this environment. We get 3 of them stacked as observation.
 
 ### Actions
-Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
+Two continuous actions are available, corresponding to the movement toward (or away from) the net, and jumping.
 
 Every entry in the action vector is clipped between -1 and 1.
 
@@ -22,7 +22,7 @@ The task is episodic, and in order to solve the environment, your agents must ge
 
 - After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
 - This yields a single score for each episode.
-The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
+The environment is considered solved when the average (over 100 episodes) of those scores is at least +0.5.
 
 ## Getting started
 
@@ -49,3 +49,6 @@ For more information, please refer to the [Udacity's instruction](https://github
 
 ## Report
 The report can be found [here](Report.md)
+
+
+
